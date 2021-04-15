@@ -16,7 +16,16 @@
 <body>
   <div class="site-container">
     @include('partials/header.html')
-    <img src="img/cover.jpg" alt="Обложка" style="width: 100%;">
+    <main class="main">
+      @include('partials/hero.html')
+      @include('partials/catalog.html')
+      @include('partials/about.html')
+      @include('partials/quiz.html')
+      @include('partials/team.html')
+      @include('partials/faq.html')
+      @include('partials/contacts.html')
+      @include('partials/insta.html')
+    </main>
     @include('partials/footer.html')
     <!-- @include('html/h1.html') пример инклуда -->
   </div>

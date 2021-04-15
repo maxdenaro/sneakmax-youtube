@@ -1,1 +1,20 @@
-//
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  &__container {
+    align-items: center;
+  }
+
+  &__left {
+    grid-column: 2 span;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 10 span;
+  }
+}
