@@ -1,0 +1,44 @@
+.catalog {
+  padding: var(--big-offset) 0;
+
+  &__left {
+    grid-column: 3 span;
+    border-radius: 4px;
+    padding: var(--second-offset);
+    background-color: var(--color-bg);
+  }
+
+  &__grid {
+    grid-column: 9 span;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: var(--second-offset);
+    font: var(--prehigh-book);
+  }
+
+  &__caption {
+    display: block;
+    margin-bottom: var(--small-offset);
+    font: var(--middle-book);
+    color: var(--color-main);
+  }
+
+  &__prop {
+    margin-bottom: var(--second-offset);
+  }
+
+  &__prop-checkboxes {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.catalog-list {
+  grid-template-columns: repeat(9, 1fr);
+
+  &__item {
+    grid-column: 3 span;
+  }
+}

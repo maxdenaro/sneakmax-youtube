@@ -2,10 +2,26 @@
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 100;
   width: 100%;
 
   &__container {
+    --paddings: 15px;
+
+    position: relative;
     align-items: center;
+    padding: var(--second-offset) var(--paddings);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: calc(100% - (var(--paddings) * 2));
+      height: 1px;
+      background-color: var(--color-border);
+      transform: translateX(-50%);
+    }
   }
 
   &__left {
