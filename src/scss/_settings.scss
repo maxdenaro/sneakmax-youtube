@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "asd", sans-serif;
+  font-family: "Intro", sans-serif;
   background-color: var(--color-white);
 }
 
@@ -88,6 +88,15 @@ a {
 
     &:hover {
       background-color: var(--color-accent-hover);
+    }
+  }
+
+  &--secondary {
+    color: var(--color-white);
+    background-color: var(--color-main);
+
+    &:hover {
+      background-color: var(--color-main-hover);
     }
   }
 }
