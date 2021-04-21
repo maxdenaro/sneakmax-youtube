@@ -1,4 +1,5 @@
 .about {
+  position: relative;
   overflow: hidden;
   height: 580px;
   background-color: var(--color-eastbay);
@@ -6,7 +7,58 @@
   &__container {
     position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__figure {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__text {
+    width: 34%;
+    transform: translateY(70px);
+  }
+
+  &__title {
+    margin-bottom: var(--second-offset);
+    color: var(--color-white);
+  }
+
+  &__descr {
+    font: var(--middle-book);
+    color: var(--color-white);
+  }
+
+  &__quote {
+    display: inline-block;
+    margin-bottom: var(--second-offset);
+    font: inherit;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font: var(--prehigh-regular);
+    font-style: normal;
+    transform: translateX(50px);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: var(--second-offset);
+      width: 30px;
+      height: 3px;
+      background-color: var(--color-white);
+    }
   }
 
   &__image {

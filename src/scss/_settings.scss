@@ -70,6 +70,17 @@ a {
   outline: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -97,6 +108,18 @@ a {
 
     &:hover {
       background-color: var(--color-main-hover);
+    }
+  }
+
+  &--thirdly {
+    border: 1px solid var(--color-main);
+    padding: 13px 45px;
+    color: var(--color-main);
+    background-color: transparent;
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-main);
     }
   }
 }
@@ -134,4 +157,70 @@ a {
       background-size: 15px 12px;
     }
   }
+}
+
+.tooltip {
+  position: relative;
+  margin-left: var(--small-offset);
+}
+
+.tooltip__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 2px 4px 10px rgba(0, 13, 84, 0.2);
+  background: var(--color-white);
+
+  svg {
+    width: 6px;
+    height: 10px;
+  }
+}
+
+.tooltip__txt {
+  position: absolute;
+  left: -10px;
+  bottom: calc(100% + 14px);
+  z-index: 3;
+  border-radius: 4px;
+  padding: var(--small-offset) var(--second-offset);
+  width: max-content;
+  max-width: 426px;
+  box-shadow: 4px 8px 20px rgba(0, 13, 84, 0.2);
+  font: var(--small-book);
+  text-transform: initial;
+  color: var(--color-main);
+  background: var(--color-white);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.tooltip__txt::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -8px;
+  border-style: solid;
+  border-width: 10px 8px 0;
+  border-color: var(--color-white) transparent transparent transparent;
+  border-radius: 4px;
+  width: 0;
+  height: 0;
+}
+
+.tooltip__btn:hover + .tooltip__txt {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tooltip__btn:focus + .tooltip__txt {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
