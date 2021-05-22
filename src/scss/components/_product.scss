@@ -66,12 +66,134 @@
     &:hover {
       background-color: var(--color-main-hover);
     }
+
+    &--disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
   }
 
   &:hover {
     .product__btns {
       opacity: 1;
       visibility: visible;
+    }
+  }
+}
+
+.mini-product {
+  display: flex;
+  align-items: center;
+  padding: var(--small-offset) var(--second-offset);
+
+  &__image {
+    flex-shrink: 0;
+    margin-right: var(--small-offset);
+    width: 100px;
+    height: 100px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  &__text {
+    margin-right: auto;
+    max-width: 268px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 14px;
+    font: var(--small-book);
+    line-height: 20px;
+  }
+
+  &__price {
+    font: var(--prehigh-regular);
+    font-weight: 700;
+    color: #4d4d4d;
+  }
+
+  &__delete {
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+  }
+}
+
+.cart-modal {
+  .mini-product {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &__image {
+      flex-shrink: 0;
+      margin-right: var(--small-offset);
+      width: 80px;
+      height: 45px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+    }
+
+    &__text {
+      margin-right: auto;
+      max-width: 290px;
+    }
+
+    &__title {
+      margin: 0;
+      margin-bottom: var(--small-offset);
+      font: var(--small-book);
+      line-height: 20px;
+    }
+
+    &__price {
+      font: var(--prehigh-regular);
+      font-weight: 700;
+      color: #4d4d4d;
+    }
+
+    &__delete {
+      width: auto;
+      height: auto;
+      font: var(--small-book);
+      line-height: 14px;
+      color: var(--color-gray);
+
+      svg {
+        display: none;
+      }
     }
   }
 }

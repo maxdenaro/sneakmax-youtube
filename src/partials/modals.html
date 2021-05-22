@@ -101,4 +101,51 @@
       </div>
     </div>
   </div>
+  <div class="modal__container cart-modal" role="dialog" aria-modal="true" data-graph-target="cart-modal">
+    <button class="btn-reset modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="modal-content">
+      <div class="cart-modal__top">
+        <h2 class="cart-modal__title">Оформление заказа</h2>
+        <span class="cart-modal__order-number">Заказ 345667</span>
+      </div>
+      <div class="cart-modal-order">
+        <div class="cart-modal-order__top">
+          <div class="span cart-modal-order__quantity">Товаров в заказе: <span>3 шт</span></div>
+          <div class="span cart-modal-order__summ">Общая сумма заказа: <span>25 789 р</span></div>
+        </div>
+        <div class="cart-modal-order__content">
+          <button class="btn-reset cart-modal-order__show">
+            Состав заказа
+            <svg>
+              <use xlink:href="img/sprite.svg#angle"></use>
+            </svg>
+          </button>
+          <ul class="cart-modal-order__list list-reset">
+            <li class="cart-modal-order__item">
+              <article class="cart-modal-order__product cart-modal-product">
+                <div class="cart-modal-product__image">
+                  <img src="img/product-image.jpg" alt="">
+                </div>
+                <div class="cart-modal-product__content">
+                  <div class="cart-modal-product__text">
+                    <h3 class="cart-modal-product__title">Женские кроссовки Puma Force 1 Shadow</h3>
+                    <span class="cart-modal-product__price">8 678 р</span>
+                  </div>
+                  <button class="btn-reset cart-modal-product__delete" aria-label="Удалить товар">
+                    Удалить
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <form class="cart-modal__form">
+        <input type="text" class="input cart-modal__input" name="name" placeholder="Ваше имя">
+        <input type="tel" class="input cart-modal__input" name="tel" placeholder="Номер телефона">
+        <input type="email" class="input cart-modal__input" name="email" placeholder="E-mail">
+        <button class="btn-reset btn btn--primary cart-modal__btn">Оформить заказ</button>
+      </form>
+    </div>
+  </div>
 </div>
