@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .contacts {
   padding: var(--big-offset) 0;
   background-color: #f3f6f6;
@@ -6,6 +8,10 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
   }
 
   &__title {
@@ -30,21 +36,51 @@
   &__phone {
     display: inline-block;
     margin-bottom: var(--small-offset);
+    outline: none;
     font: var(--middle-high-bold);
     color: var(--color-main);
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      color: var(--color-accent);
+    }
+
+    @include desktop {
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+
+    &:active {
+      color: var(--color-accent-hover);
+    }
   }
 
   &__text {
     margin-right: var(--second-offset);
     width: calc(100% - (680px + var(--second-offset)));
+
+    @include tablet {
+      margin-right: 0;
+      margin-bottom: var(--second-offset);
+      width: 100%;
+    }
   }
 
   &__address {
     display: block;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__map {
     width: 680px;
     height: 500px;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 }

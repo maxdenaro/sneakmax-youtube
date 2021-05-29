@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .quiz {
   padding: var(--big-offset) 0;
 
@@ -5,6 +7,10 @@
     border-radius: 4px;
     padding: var(--main-offset) 100px;
     background-color: var(--color-bg);
+
+    @include small-tablet {
+      padding: var(--main-offset);
+    }
   }
 
   &__title {
@@ -32,12 +38,31 @@
     color: var(--color-main);
   }
 
+  &__label {
+    display: inline-block;
+  }
+
+  &__message {
+    border: none;
+    border-radius: 4px;
+    padding: var(--second-offset);
+    width: 465px;
+    height: 246px;
+    color: var(--color-cameo);
+    background-color: var(--color-white);
+    resize: none;
+  }
+
   &__answers {
     display: grid;
     grid-auto-rows: 155px;
     grid-template-columns: repeat(3, 1fr);
     padding-bottom: var(--main-offset);
     gap: var(--second-offset) 70px;
+
+    @include small-tablet {
+      gap: var(--second-offset);
+    }
   }
 
   &__item {
@@ -60,6 +85,70 @@
   padding-top: var(--second-offset);
 }
 
-.asd {
+.last-question {
   display: none;
+  padding-top: var(--second-offset);
+
+  &__form {
+    position: relative;
+    border-radius: 4px;
+    padding: var(--main-offset);
+    max-width: 655px;
+    background: var(--color-cameo);
+  }
+
+  &__decorate {
+    position: absolute;
+    right: -185px;
+    top: -5px;
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: var(--small-offset);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 140%;
+    color: var(--color-white);
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: var(--second-offset);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--color-white);
+  }
+
+  &__input {
+    margin-bottom: var(--small-offset);
+    max-width: 500px;
+
+    &:nth-of-type(2) {
+      margin-bottom: var(--second-offset);
+    }
+
+    @include mobile {
+      max-width: none;
+    }
+  }
+
+  &__btn {
+    min-width: 220px;
+
+    @include mobile {
+      width: 100%;
+      min-width: auto;
+    }
+  }
 }

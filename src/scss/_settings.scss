@@ -54,6 +54,7 @@ a {
 }
 
 .btn-reset {
+  // outline: none;
   border: none;
   padding: 0;
   background: transparent;
@@ -78,16 +79,21 @@ a {
   padding: 0;
   overflow: hidden;
   border: 0;
-  clip: rect(0 0 0 0)
+  clip: rect(0 0 0 0);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--grid-gap);
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .btn {
+  outline: none;
   border-radius: 4px;
   padding: 22px 47px;
   font: var(--middle-regular);
@@ -97,8 +103,14 @@ a {
     color: var(--color-white);
     background-color: var(--color-accent);
 
-    &:hover {
-      background-color: var(--color-accent-hover);
+    @include desktop {
+      &:hover {
+        background-color: var(--color-accent-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--color-btn-active);
     }
   }
 
@@ -106,8 +118,14 @@ a {
     color: var(--color-white);
     background-color: var(--color-main);
 
-    &:hover {
-      background-color: var(--color-main-hover);
+    @include desktop {
+      &:hover {
+        background-color: var(--color-main-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--color-btn-active);
     }
   }
 
@@ -117,11 +135,30 @@ a {
     color: var(--color-main);
     background-color: transparent;
 
-    &:hover {
-      color: var(--color-white);
-      background-color: var(--color-main);
+    @include desktop {
+      &:hover {
+        color: var(--color-white);
+        background-color: var(--color-main);
+      }
+    }
+
+    &:active {
+      background-color: var(--color-btn-active);
     }
   }
+}
+
+.btn--primary.focus-visible {
+  background-color: var(--color-accent-hover);
+}
+
+.btn--secondary.focus-visible {
+  background-color: var(--color-main-hover);
+}
+
+.btn--thirdly.focus-visible {
+  color: var(--color-white);
+  background-color: var(--color-main);
 }
 
 .title {
@@ -156,6 +193,10 @@ a {
       background-image: url("../img/check.svg");
       background-size: 15px 12px;
     }
+  }
+
+  .custom-checkbox__field:focus + .custom-checkbox__content::before {
+    outline: 2px solid var(--color-accent);
   }
 }
 

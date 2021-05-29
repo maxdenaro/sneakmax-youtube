@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .instagram {
   padding: var(--big-offset);
 
@@ -5,6 +7,10 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    @include small-tablet {
+      justify-content: center;
+    }
   }
 
   &__left {
@@ -13,6 +19,10 @@
     border-radius: 4px;
     width: 380px;
     background-color: var(--color-eastbay);
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__right {
@@ -20,6 +30,10 @@
     flex-direction: column;
     align-items: center;
     width: calc(100% - (380px + var(--small-offset)));
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -81,6 +95,10 @@
     &:nth-child(2) {
       grid-row: 2;
     }
+  }
+
+  @include mobile {
+    padding: 40px 0;
   }
 }
 

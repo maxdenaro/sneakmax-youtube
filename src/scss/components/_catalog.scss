@@ -1,8 +1,33 @@
+@import "../mixins";
+
 .catalog {
   padding: var(--big-offset) 0;
 
   &__left {
     grid-column: 3 span;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__reset {
+    outline: none;
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      color: var(--color-accent);
+    }
+
+    @include desktop {
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+
+    &:focus {
+      color: var(--color-accent-hover);
+    }
   }
 
   &__grid {
@@ -10,6 +35,10 @@
     flex-direction: column;
     align-items: center;
     grid-column: 9 span;
+
+    @include tablet {
+      grid-column: 12 span;
+    }
   }
 
   &__subtitle {
@@ -50,6 +79,14 @@
   &__item {
     grid-column: 3 span;
   }
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+
+    &__item {
+      grid-column: 4 span;
+    }
+  }
 }
 
 .catalog-filters {
@@ -84,6 +121,7 @@
   }
 
   &__input {
+    outline: none;
     border: 1px solid var(--color-gray);
     width: 50%;
     height: 50px;
@@ -142,4 +180,13 @@
   .noUi-handle-lower {
     right: -3px;
   }
+}
+
+.noUi-handle:focus {
+  outline: none;
+  background-color: var(--color-accent);
+}
+
+.catalog-price__input.focus-visible {
+  background-color: var(--color-cameo);
 }

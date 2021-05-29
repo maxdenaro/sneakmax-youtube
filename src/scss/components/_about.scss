@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .about {
   position: relative;
   overflow: hidden;
@@ -20,6 +22,11 @@
   &__text {
     width: 34%;
     transform: translateY(70px);
+
+    @include small-tablet {
+      width: 100%;
+      transform: none;
+    }
   }
 
   &__title {
@@ -59,6 +66,10 @@
       height: 3px;
       background-color: var(--color-white);
     }
+
+    @include small-tablet {
+      transform: none;
+    }
   }
 
   &__image {
@@ -82,5 +93,18 @@
       object-fit: cover;
       transform: rotate(-15deg) translateX(-50%);
     }
+
+    @include tablet {
+      right: -100px;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  @include small-tablet {
+    padding: 50px 0;
+    height: auto;
   }
 }
