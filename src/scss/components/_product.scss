@@ -17,6 +17,10 @@
     opacity: 0;
     // visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    @include mobile {
+      opacity: 1;
+    }
   }
 
   &__image {
@@ -55,6 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
     border-radius: 100%;
     width: 80px;
     height: 80px;
@@ -68,14 +73,22 @@
       object-fit: cover;
     }
 
-    &:first-child {
-      margin-right: var(--main-offset);
+    &:focus {
+      background-color: var(--color-main-hover);
     }
 
     @include desktop {
       &:hover {
         background-color: var(--color-main-hover);
       }
+    }
+
+    &:active {
+      background-color: var(--color-accent-hover);
+    }
+
+    &:first-child {
+      margin-right: var(--main-offset);
     }
 
     &--disabled {
@@ -110,6 +123,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @include mobile {
+      width: 60px;
+      height: 60px;
     }
   }
 
@@ -208,6 +226,10 @@
       svg {
         display: none;
       }
+    }
+
+    @include mobile {
+      display: block;
     }
   }
 }

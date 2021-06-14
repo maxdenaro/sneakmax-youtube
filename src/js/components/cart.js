@@ -6,7 +6,7 @@ cartBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('click', (e) => {
-  if (!e.target.classList.contains('mini-cart') && e.target.closest('.mini-cart') && !e.target.classList.contains('cart__btn')) {
+  if (!e.target.classList.contains('mini-cart') && !e.target.closest('.mini-cart') && !e.target.classList.contains('cart__btn')) {
     miniCart.classList.remove('mini-cart--visible');
   }
 });

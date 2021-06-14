@@ -33,6 +33,10 @@
     overflow: hidden;
     margin-bottom: var(--second-offset);
     border-radius: 4px;
+
+    @include small-tablet {
+      width: 100%;
+    }
   }
 
   &__subtitle {

@@ -5,6 +5,11 @@
 
   .modal__close {
     display: none;
+
+    @include small-tablet {
+      z-index: 100;
+      display: block;
+    }
   }
 
   &__top {
@@ -12,6 +17,10 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: var(--main-offset);
+
+    @include small-tablet {
+      display: block;
+    }
   }
 
   &__title {
@@ -35,6 +44,11 @@
       margin-bottom: var(--small-offset);
     }
   }
+
+  @include small-tablet {
+    width: 100%;
+    max-width: 570px;
+  }
 }
 
 .cart-modal-order {
@@ -51,6 +65,10 @@
     span {
       font-weight: 700;
       color: var(--color-main);
+    }
+
+    @include mobile {
+      font-size: 14px;
     }
   }
 

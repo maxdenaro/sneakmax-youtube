@@ -36,6 +36,10 @@
     justify-content: flex-end;
     grid-column: 10 span;
 
+    @include tablet {
+      align-items: center;
+    }
+
     @include mobile {
       grid-column: 2 span;
     }
@@ -43,7 +47,34 @@
 
   &__nav {
     @include tablet {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      padding: 50px;
+      width: 70%;
+      height: 100vh;
+      background-color: var(--color-eastbay);
       display: none;
+
+      &--active {
+        display: block;
+      }
     }
+  }
+}
+
+.burger {
+  --burger-width: 24px;
+  --burger-height: 18px;
+  --burger-line-height: 3px;
+
+  @include burger;
+
+  display: none;
+  color: var(--color-white);
+
+  @include tablet {
+    display: block;
   }
 }

@@ -37,6 +37,10 @@
         fill: var(--color-accent-hover);
       }
     }
+
+    &--inactive {
+      pointer-events: none;
+    }
   }
 
   &__count {
@@ -142,6 +146,6 @@
   }
 
   @include mobile {
-    width: 290px;
+    width: calc(100vw - 30px);
   }
 }

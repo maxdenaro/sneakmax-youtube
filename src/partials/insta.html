@@ -5,8 +5,14 @@
       <form action="#" class="callback-form">
         <h3 class="title instagram__title">Есть вопросы?</h3>
         <p class="instagram__descr">Заполните форму и&nbsp;наш менеджер свяжется с&nbsp;вами</p>
-        <input type="text" class="input instagram__input" placeholder="Ваше имя">
-        <input type="tel" class="input instagram__input" placeholder="Номер телефона">
+        <label class="form-label">
+          <input type="text" class="input instagram__input" placeholder="Ваше имя" name="name"
+            data-validate-field="name">
+        </label>
+        <label class="form-label">
+          <input type="tel" class="input instagram__input" placeholder="Номер телефона" name="phone"
+            data-validate-field="phone">
+        </label>
         <button class="btn btn--primary btn-reset instagram__btn">Отправить</button>
       </form>
     </div>
@@ -14,7 +20,28 @@
       <a href="#" class="instagram__link">
         <img src="img/instagram.png" alt="Лого инстаграма">
       </a>
-      <div class="instagram__content"></div>
+      <div class="instagram__content">
+        <article class="instagram__item">
+          <h3 class="instagram__subtitle visually-hidden">Фото чего-то</h3>
+          <img src="img/insta-1.jpg" alt="Фото из Инстаграма">
+        </article>
+        <article class="instagram__item">
+          <h3 class="instagram__subtitle visually-hidden">Фото чего-то</h3>
+          <img src="img/insta-2.jpg" alt="Фото из Инстаграма">
+        </article>
+        <article class="instagram__item">
+          <h3 class="instagram__subtitle visually-hidden">Фото чего-то</h3>
+          <img src="img/insta-3.jpg" alt="Фото из Инстаграма">
+        </article>
+        <article class="instagram__item">
+          <h3 class="instagram__subtitle visually-hidden">Фото чего-то</h3>
+          <img src="img/insta-4.jpg" alt="Фото из Инстаграма">
+        </article>
+        <article class="instagram__item">
+          <h3 class="instagram__subtitle visually-hidden">Фото чего-то</h3>
+          <img src="img/insta-5.jpg" alt="Фото из Инстаграма">
+        </article>
+      </div>
     </div>
   </div>
 </section>

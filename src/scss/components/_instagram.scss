@@ -21,6 +21,7 @@
     background-color: var(--color-eastbay);
 
     @include mobile {
+      margin-right: 0;
       width: 100%;
     }
   }

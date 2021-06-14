@@ -2,11 +2,20 @@
   &__list {
     display: flex;
     align-self: center;
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__item {
     &:not(:last-child) {
       margin-right: var(--main-offset);
+
+      @include tablet {
+        margin-right: 0;
+        margin-bottom: var(--main-offset);
+      }
     }
   }
 
@@ -34,6 +43,10 @@
       &::before {
         transform: scaleX(1);
       }
+    }
+
+    @include tablet {
+      font: var(--prehigh-regular);
     }
 
     @include desktop {
