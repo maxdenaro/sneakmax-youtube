@@ -392,10 +392,10 @@ orderModalList.addEventListener('click', (e) => {
 
     parent.style.display = 'none';
 
-    setTimeout(() => {
+    //setTimeout(() => {
       parent.remove();
 
-    }, 100);
+    //}, 100);
 
     document.querySelector(`.mini-cart__item[data-id="${id}"]`).remove();
 
